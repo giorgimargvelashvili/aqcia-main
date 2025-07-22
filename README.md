@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Price Comparison API Backend
 
 ## Prerequisites
@@ -72,3 +73,6 @@ Your coworker can POST scraped data to the API endpoints (see /docs for details)
 
 ## Need Help?
 Just run the server and visit `/docs` for a full, interactive guide to all endpoints!
+=======
+# railways
+>>>>>>> 040a9da9f7bcb0aead0faeafb754baea9352f0cc

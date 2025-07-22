@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Category</title>
+    <style>
+                body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f7f9fb;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: #2d3e50;
+            color: #fff;
+            padding: 1.2em 2em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            padding: 0.6em 1.2em;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #0d47a1;
+        }
+        .container {
+            max-width: 500px;
+            margin: 2.5em auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+            padding: 2.5em 2em 2em 2em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2em;
+        }
+        label {
+            font-weight: 500;
+            color: #2d3e50;
+            margin-bottom: 0.3em;
+        }
+        input[type="text"] {
+            padding: 0.7em 1em;
+            border-radius: 4px;
+            border: 1px solid #b0bec5;
+            font-size: 1em;
+            background: #f7f9fb;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus {
+            border: 1.5px solid #1976d2;
+            outline: none;
+        }
+        .save_btn {
+            background: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 0.8em 0;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 0.5em;
+            transition: background 0.2s;
+        }
+        .save_btn:hover {
+            background: #388e3c;
+        }
+        .note {
+            font-size: 0.98em;
+            color: #607d8b;
+            margin-bottom: 1em;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 1.2em 0.5em; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Category</h1>
+    <div class="container">
+        <div class="note">The numeric ID is auto-generated. You cannot change it.</div>
+        <form method="post">
+            <div>
+                <label>Name (Georgian):</label>
+                <input type="text" name="name_ka" value="{{ category.name_ka }}" required>
+            </div>
+            <div>
+                <label>Name (English):</label>
+                <input type="text" name="name_en" value="{{ category.name_en }}" required>
+            </div>
+            <div>
+                <label>Name (Russian):</label>
+                <input type="text" name="name_ru" value="{{ category.name_ru }}" required>
+            </div>
+            <div>
+                <label>Icon filename:</label>
+                <input type="text" name="icon" value="{{ category.icon }}">
+            </div>
+            <button class="save_btn" type="submit">Save</button>
+            <a href="{{ url_for('admin_categories.list_categories') }}">Cancel</a>
+        </form>
+    </div>
+</body>
+</html> 
